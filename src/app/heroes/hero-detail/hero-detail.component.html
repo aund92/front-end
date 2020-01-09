@@ -1,0 +1,15 @@
+<div *ngIf="hero" class="container">
+  <h3 style="text-align: center">{{hero.name || uppercase}} Details</h3>
+  <div class="form-group">
+    <div class="row">
+      <label class="col-2">Id</label>
+      <div class="col-8">{{hero.id}}</div>
+    </div>
+    <div class="row">
+      <label class="col-2">Hero Name</label>
+      <input type="text" [(ngModel)]="hero.name" class="form-control col-4" placeholder="Enter your hero name">
+    </div>
+  </div>
+  <button (click)="updateHero()" class="btn btn-info" >Save</button>
+  <button (click)="goBack()" class="btn btn-info" style="margin-left: 10px">Go Back</button>
+</div>

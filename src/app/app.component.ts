@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
-
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-springboot-client';
+export class AppComponent implements OnInit {
+  title = 'Angular8 + Spring boot 2 CRUD Tutorial';
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit(): void {
+    $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+    });
+  }
+
 }

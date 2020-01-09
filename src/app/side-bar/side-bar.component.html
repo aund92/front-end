@@ -1,0 +1,44 @@
+<nav id="sidebar" *ngIf="userService.isUserLoggerIn()">
+  <div class="sidebar-header">
+    <h3 *ngIf="userService.isUserLoggerIn()">{{username}}</h3>
+    <a *ngIf="userService.isUserLoggerIn()" routerLink="logout" class="nav-link" routerLinkActive="active">Logout</a>
+    <a *ngIf="!userService.isUserLoggerIn()" routerLink="login" class="nav-link" routerLinkActive="active">Login</a>
+  </div>
+  <ul class="list-unstyled components" *ngIf="userService.isUserLoggerIn()">
+    <p>Menu</p>
+    <li class="active" *ngIf="userService.isUserLoggerIn()">
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employee</a>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li>
+          <a routerLink="employee/list" class="nav-link" routerLinkActive="active">Employee List</a>
+        </li>
+        <li>
+          <a routerLink="employee/add" class="nav-link" routerLinkActive="active">Add Employee</a>
+        </li>
+      </ul>
+    </li>
+    <li *ngIf="userService.isUserLoggerIn()">
+      <a routerLink="heroes" class="nav-link" routerLinkActive="active">Tour of Heroes</a>
+    </li>
+    <!--    <li>-->
+    <!--      <a href="#pageSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>-->
+    <!--      <ul class="collapse list-unstyled" id="pageSubMenu">-->
+    <!--        <li>-->
+    <!--          <a href="#">Page 1</a>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--          <a href="#">Page 2</a>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--          <a href="#">Page 3</a>-->
+    <!--        </li>-->
+    <!--      </ul>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Portfolio</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Contact</a>-->
+    <!--    </li>-->
+  </ul>
+</nav>
