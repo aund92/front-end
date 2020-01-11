@@ -1,11 +1,10 @@
 <div class="wrapper">
-  <app-side-bar></app-side-bar>
+  <app-side-bar [username]="username" *ngIf="userService.isUserLoggerIn()"></app-side-bar>
   <main style="width: 100%; height: 100%;overflow-y: auto">
     <div class="container-fluid">
       <div class="card-body">
         <router-outlet></router-outlet>
       </div>
-
     </div>
 
   </main>
@@ -26,11 +25,11 @@
   <!--      </div>-->
   <!--    </div>-->
   <!--  </div>-->
-<!--  <footer class="footer">-->
-<!--    <div class="container">-->
-<!--      <span>All Rights Reserved 2019 @JavaGuides</span>-->
-<!--    </div>-->
-<!--  </footer>-->
+  <!--  <footer class="footer">-->
+  <!--    <div class="container">-->
+  <!--      <span>All Rights Reserved 2019 @JavaGuides</span>-->
+  <!--    </div>-->
+  <!--  </footer>-->
 
 </div>
 <!--<nav class="navbar navbar-expand-sm bg-primary navbar-dark">-->

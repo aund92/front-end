@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthenticationService} from '../user/authentication.service';
 
 @Component({
@@ -7,14 +7,14 @@ import {AuthenticationService} from '../user/authentication.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  username: string;
+  @Input() username: string;
 
   constructor(
     private userService: AuthenticationService) {
   }
 
   ngOnInit() {
-    this.username = sessionStorage.getItem('username');
   }
+
 
 }
