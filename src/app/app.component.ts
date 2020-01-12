@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthenticationService} from './user/authentication.service';
+import {UserService} from './service/user.service';
 
 declare var $: any;
 
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   username = '';
   constructor(
     private router: Router,
-    private userService: AuthenticationService
+    private userService: UserService
   ) {
   }
 
